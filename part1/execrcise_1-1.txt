@@ -1,0 +1,18 @@
+~/Documents/project/mooc/docker/part1$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                    PORTS               NAMES
+eecd06034d8c        nginx               "nginx -g 'daemon of…"   6 seconds ago       Up 5 seconds              80/tcp              stupefied_booth
+b3970c23462d        nginx               "nginx -g 'daemon of…"   7 seconds ago       Up 6 seconds              80/tcp              frosty_rubin
+057b490d851b        nginx               "nginx -g 'daemon of…"   10 seconds ago      Up 9 seconds              80/tcp              boring_keller
+
+~/Documents/project/mooc/docker/part1$ docker container stop b3970c23462d
+b3970c23462d
+
+~/Documents/project/mooc/docker/part1$ docker container stop 057
+057
+
+~/Documents/project/mooc/docker/part1$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
+eecd06034d8c        nginx               "nginx -g 'daemon of…"   47 seconds ago      Up 46 seconds               80/tcp              stupefied_booth
+b3970c23462d        nginx               "nginx -g 'daemon of…"   48 seconds ago      Exited (0) 11 seconds ago                       frosty_rubin
+057b490d851b        nginx               "nginx -g 'daemon of…"   51 seconds ago      Exited (0) 4 seconds ago                        boring_keller
+
