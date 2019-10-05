@@ -1,0 +1,34 @@
+~/Documents/project/mooc/docker/part1$ docker container ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+eecd06034d8c        nginx               "nginx -g 'daemon of…"   4 minutes ago       Up 4 minutes               80/tcp              stupefied_booth
+b3970c23462d        nginx               "nginx -g 'daemon of…"   4 minutes ago       Exited (0) 3 minutes ago                       frosty_rubin
+057b490d851b        nginx               "nginx -g 'daemon of…"   4 minutes ago       Exited (0) 3 minutes ago                       boring_keller
+
+~/Documents/project/mooc/docker/part1$ docker container stop eec
+eec
+
+~/Documents/project/mooc/docker/part1$ docker container rm eec b39 057
+eec
+b39
+057
+
+~/Documents/project/mooc/docker/part1$ docker container ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                    PORTS               NAMES
+
+~/Documents/project/mooc/docker/part1$ docker image ls 
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+nginx                         latest              f949e7d76d63        10 days ago         126MB
+
+Documents/project/mooc/docker/part1$ docker image rm nginx:latest 
+Untagged: nginx:latest
+Untagged: nginx@sha256:aeded0f2a861747f43a01cf1018cf9efe2bdd02afd57d2b11fcc7fcadc16ccd1
+Deleted: sha256:f949e7d76d63befffc8eec2cbf8a6f509780f96fb3bacbdc24068d594a77f043
+Deleted: sha256:301c5d89cad94a6a99703841b021cf7df4326d2f14715c52b4b27893b13e02c0
+Deleted: sha256:c3172409dcf95530cce7aad6a4c16a476fec9c43ac38426e9487b43efd246357
+Deleted: sha256:2db44bce66cde56fca25aeeb7d09dc924b748e3adfe58c9cc3eb2bd2f68a1b68
+
+~/Documents/project/mooc/docker/part1$ docker image ls
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+
+
+
