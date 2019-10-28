@@ -1,0 +1,12 @@
+FROM ubuntu:16.04
+
+MAINTAINER Ilkka Hauta-aho <ilkka.hauta-aho@miiliconsulting.com>
+
+ENV DEBIAN_FRONTEND noninteractive
+ 
+RUN apt-get update -y && \
+    apt-get install curl -y
+    
+CMD ["/bin/bash"]
+
+

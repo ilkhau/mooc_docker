@@ -1,0 +1,30 @@
+~/Documents/project/mooc/docker/part1$ docker run -d --rm --name exec_bash_exercise devopsdockeruh/exec_bash_exercise
+ea2383a2879c20b407d0c7cac78d6fef36e27eabe7de8dc0ef491b4775ecd32f
+
+~/Documents/project/mooc/docker/part1$ docker exec -it exec_bash_exercise bash
+
+root@ea2383a2879c:/usr/app# ls
+Dockerfile  README.md  index.js  logs.txt
+
+root@ea2383a2879c:/usr/app# tail -f logs.txt 
+Secret message is:
+"Docker is easy"
+Mon, 28 Oct 2019 12:18:23 GMT
+Mon, 28 Oct 2019 12:18:26 GMT
+Mon, 28 Oct 2019 12:18:29 GMT
+Mon, 28 Oct 2019 12:18:32 GMT
+Secret message is:
+"Docker is easy"
+Mon, 28 Oct 2019 12:18:38 GMT
+Mon, 28 Oct 2019 12:18:41 GMT
+Mon, 28 Oct 2019 12:18:44 GMT
+Mon, 28 Oct 2019 12:18:47 GMT
+^C
+root@ea2383a2879c:/usr/app# exit
+exit
+
+~/Documents/project/mooc/docker/part1$ docker stop exec_bash_exercise 
+exec_bash_exercise
+
+~/Documents/project/mooc/docker/part1$ 
+
