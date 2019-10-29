@@ -1,0 +1,38 @@
+~/Documents/project/mooc/docker/part1$ docker image build -t curler -f Dockerfile_1_7 .
+Sending build context to Docker daemon  15.36kB
+Step 1/7 : FROM ubuntu:16.04
+ ---> b9409899fe86
+Step 2/7 : MAINTAINER Ilkka Hauta-aho <ilkka.hauta-aho@miiliconsulting.com>
+ ---> Using cache
+ ---> a73cd33aeae6
+Step 3/7 : ENV DEBIAN_FRONTEND noninteractive
+ ---> Using cache
+ ---> 0ff3ba2f4d46
+Step 4/7 : WORKDIR /app
+ ---> Using cache
+ ---> 6dabc1388e89
+Step 5/7 : COPY curler.sh .
+ ---> Using cache
+ ---> 1f338982e616
+Step 6/7 : RUN apt-get update &&     apt-get install curl -y
+ ---> Using cache
+ ---> 30dc0e66c134
+Step 7/7 : CMD ["./curler.sh"]
+ ---> Running in 22d0bba1b4e4
+Removing intermediate container 22d0bba1b4e4
+ ---> e91e03bfd3a7
+Successfully built e91e03bfd3a7
+Successfully tagged curler:latest
+
+~/Documents/project/mooc/docker/part1$ docker run -it curler
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+~/Documents/project/mooc/docker/part1$
