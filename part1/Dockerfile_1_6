@@ -1,0 +1,6 @@
+FROM devopsdockeruh/overwrite_cmd_exercise
+MAINTAINER Ilkka Hauta-aho <ilkka.hauta-aho@miiliconsulting.com>
+     
+CMD ["-c", "0"]
+
+
