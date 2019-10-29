@@ -1,0 +1,19 @@
+~/Documents/project/mooc/docker/part1$ touch logs/logs.txt
+
+~/Documents/project/mooc/docker/part1$ docker run -d --rm -v $(pwd)/logs/logs.txt:/usr/app/logs.txt --name logger devopsdockeruh/first_volume_exercise
+84f279b3fe428ef4369c238319dd17eeb905b334f53cfced093b9e65c0c349e2
+
+~/Documents/project/mooc/docker/part1$ tail -f logs/logs.txt 
+Tue, 29 Oct 2019 11:11:04 GMT
+Tue, 29 Oct 2019 11:11:07 GMT
+Tue, 29 Oct 2019 11:11:10 GMT
+Tue, 29 Oct 2019 11:11:13 GMT
+Secret message is:
+"Volume bind mount is easy"
+Tue, 29 Oct 2019 11:11:19 GMT
+^C
+
+~/Documents/project/mooc/docker/part1$ docker container stop logger
+logger
+
+~/Documents/project/mooc/docker/part1$
