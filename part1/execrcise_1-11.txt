@@ -1,0 +1,19 @@
+~/Documents/project/mooc/docker/backend-example-docker$ docker build -t backend-example -f Dockerfile_1_11 .
+
+~/Documents/project/mooc/docker/backend-example-docker$ touch ~/Documents/project/mooc/docker/logs/logs.txt
+
+~/Documents/project/mooc/docker/backend-example-docker$ docker run --rm --name backend-example -v ~/Documents/project/mooc/docker/logs/logs.txt:/app/logs.txt -p 8000:8000 backend-example
+
+~/Documents/project/mooc/docker/part1$ curl localhost:8000
+Port configured correctly, generated message in logs.txt
+
+~/Documents/project/mooc/docker/part1$ cat  ~/Documents/project/mooc/docker/logs/logs.txt 
+10/31/2019, 8:11:20 AM: Connection received in root
+10/31/2019, 8:11:20 AM: Connection received in root
+10/31/2019, 8:11:21 AM: Connection received in root
+10/31/2019, 8:11:21 AM: Connection received in root
+10/31/2019, 8:11:21 AM: Connection received in root
+10/31/2019, 8:11:21 AM: Connection received in root
+10/31/2019, 8:14:58 AM: Connection received in root
+
+~/Documents/project/mooc/docker/part1$

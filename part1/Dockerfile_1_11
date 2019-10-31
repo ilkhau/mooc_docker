@@ -1,0 +1,15 @@
+FROM node:10
+
+MAINTAINER Ilkka Hauta-aho <ilkka.hauta-aho@miiliconsulting.com>
+
+WORKDIR /app
+
+COPY . ./
+
+RUN npm install
+
+EXPOSE 8000
+
+CMD ["npm", "start"]
+
+
