@@ -1,0 +1,17 @@
+FROM node:10
+
+MAINTAINER Ilkka Hauta-aho <ilkka.hauta-aho@miiliconsulting.com>
+
+ARG FRONTEND_URL
+WORKDIR /app
+
+COPY . ./
+
+RUN npm install
+
+ENV FRONT_URL $FRONTEND_URL
+EXPOSE 8000
+
+CMD ["npm", "start"]
+
+
