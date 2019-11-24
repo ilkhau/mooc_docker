@@ -1,0 +1,1 @@
+Required ruby version changed from 2.6.0 to ~2.6.0. This is due to fact that ruby:2.6 contains ruby 2.6 and it would be hazzle to install ruby 2.6 via rbenv.

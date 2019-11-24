@@ -1,0 +1,21 @@
+FROM ruby:2.6
+MAINTAINER Ilkka Hauta-aho <ilkka.hauta-aho@miiliconsulting.com>
+
+WORKDIR app
+
+COPY . .
+RUN apt-get update && \
+    apt-get install -y nodejs
+RUN gem install bundler
+RUN bundle install
+RUN rails db:migrate
+RUN rake assets:precompile
+
+ENV RAILS_LOG_TO_STDOUT true
+EXPOSE 3000
+
+CMD rails s
+
+
+
+
